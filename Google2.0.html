@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nieuw tabblad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            position: relative;
+        }
+
+        .google-title {
+            font-family: Arial;
+            font-weight: bold;
+            text-align: center;
+            font-size: 65px;
+            position: absolute; /* Dit maakt het mogelijk om de tekst te positioneren met top/left */
+            top: 150px; /* Afstand van de bovenkant van de pagina */
+            left: 500px; /* Afstand van de linkerkant van de pagina */
+        }
+
+        .search-bar {
+            position: absolute; /* Dit maakt het mogelijk om de tekst te positioneren met top/left */
+            top: 322px; /* Afstand van de bovenkant van de pagina */
+            left: 300px; /* Afstand van de linkerkant van de pagina */
+            width: 700px;
+            height: 46px;
+            border-radius: 23px;
+            text-align: left; /* Zorgt ervoor dat de tekst links wordt uitgelijnd */
+            padding-left: 2cm; /* Verplaatst de tekst iets naar rechts van de linkerkant */
+            font-size: 16px;
+            border: 1px solid #ccc;
+            box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+            outline: none;
+            transition: box-shadow 0.2s ease-in-out;
+        }
+
+        .search-bar:focus {
+            box-shadow: 0 1px 8px rgba(32, 33, 36, 0.35);
+        }
+
+        .search-button {
+            position: absolute; /* Dit maakt het mogelijk om de tekst te positioneren met top/left */
+            top: 320px; /* Afstand van de bovenkant van de pagina */
+            left: 300px; /* Afstand van de linkerkant van de pagina */
+            border: rgba(218, 218, 218, 0.705);
+            background-color: rgba(0, 0, 0, 0);
+            cursor: pointer;
+            height: 46px;
+            font-size: 30px;
+        }
+
+        .search-button:active {
+            background-color: rgba(218, 218, 218, 0.705);
+            border-radius: 8px;
+            height: 1cm;
+        }
+
+        .voice-button {
+            position: absolute; /* Dit maakt het mogelijk om de tekst te positioneren met top/left */
+            top: 320px; /* Afstand van de bovenkant van de pagina */
+            left: 960px; /* Afstand van de linkerkant van de pagina */
+            border: rgba(218, 218, 218, 0.705);
+            background-color: rgba(0, 0, 0, 0);
+            cursor: pointer;
+            height: 46px;
+            font-size: 30px;
+        }
+
+        .voice-button:active {
+            background-color: rgba(218, 218, 218, 0.705);
+            border-radius: 8px;
+            height: 1cm;
+        }
+        .camera-button {
+            position: absolute; /* Dit maakt het mogelijk om de tekst te positioneren met top/left */
+            top: 320px; /* Afstand van de bovenkant van de pagina */
+            left: 1000px; /* Afstand van de linkerkant van de pagina */
+            border: rgba(218, 218, 218, 0.705);
+            background-color: rgba(0, 0, 0, 0);
+            cursor: pointer;
+            height: 46px;
+            font-size: 30px;
+        }
+        .link-toevoegen {
+            border: rgba(218, 218, 218, 0);
+            background-color: rgba(204, 240, 255, 0);
+            cursor: pointer;
+            height: 46px;
+            font-family: 13px "Segoe UI", Tahoma, sans-serif;
+            position: absolute; /* Dit maakt het mogelijk om de tekst te positioneren met top/left */
+            top: 400px; /* Afstand van de bovenkant van de pagina */
+            left: 600px; /* Afstand van de linkerkant van de pagina */
+            border-radius: 5px;
+            width: 104px;
+            height: 106px;
+            
+        }
+        .link-toevoegen:hover {
+            background-color: rgba(177, 177, 177, 0.795);
+        }
+        .link-toevoegen-+ {
+            font-weight: bold;
+            position: absolute; /* Dit maakt het mogelijk om de tekst te positioneren met top/left */
+            top: 1px; /* Afstand van de bovenkant van de pagina */
+            left: 1000px; /* Afstand van de linkerkant van de pagina */
+        }
+        .gmail-button {
+            font-family: Arial;
+            color: rgb(95, 95, 95);
+            position: absolute; /* Dit maakt het mogelijk om de tekst te positioneren met top/left */
+            top: 58px; /* Afstand van de bovenkant van de pagina */
+            left: 1040px; /* Afstand van de linkerkant van de pagina */
+            cursor: pointer;
+            text-decoration: none; /* Geen onderstreping standaard */
+            font-size: 90%;
+        }
+
+        .gmail-button:hover {
+            text-decoration: underline; /* Onderstreping verschijnt bij hover */
+        }
+        .afbeelding-button {
+            font-family: Arial;
+            color: rgb(95, 95, 95);
+            position: absolute; /* Dit maakt het mogelijk om de tekst te positioneren met top/left */
+            top: 58px; /* Afstand van de bovenkant van de pagina */
+            left: 1100px; /* Afstand van de linkerkant van de pagina */
+            cursor: pointer;
+            text-decoration: none; /* Geen onderstreping standaard */
+            font-size: 90%;
+        }
+        .afbeelding-button:hover {
+            text-decoration: underline; /* Onderstreping verschijnt bij hover */
+        }
+        .chrome-aanpassen {
+            height: 32px;
+            border-radius: 16px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, .20), 0 1px 2px rgba(0, 0, 0, .23);
+            font-weight: 400;
+            position: absolute; /* Dit maakt het mogelijk om de tekst te positioneren met top/left */
+            top: 535px; /* Afstand van de bovenkant van de pagina */
+            left: 1085px; /* Afstand van de linkerkant van de pagina */
+            cursor: pointer;
+            border: none;
+            background-color: rgb(207, 224, 255);
+            padding: 8px 16px;
+        }
+        .chrome-aanpassen:hover {
+            background-color: rgb(170, 183, 209);
+        }
+        hr {
+            width: 99%; /* Zorgt ervoor dat de <hr> de volledige breedte van de container beslaat */
+            border: 0.1px solid rgb(204, 204, 204); /* Standaard randstijl */
+            margin: 0; /* Verwijdert de standaard marge */
+            position: absolute; /* Zorgt ervoor dat de <hr> kan worden gepositioneerd met top/left */
+            top: 33px; /* Pas dit aan om de verticale positie te veranderen */
+            left: 0; /* Zorg ervoor dat de <hr> aan de linkerkant van de pagina begint */
+        }
+        .bookmakers-button {
+            border: none;
+            background-color: rgba(0, 0, 255, 0);
+            color: rgb(71, 71, 71);
+            position: absolute; /* Zorgt ervoor dat de <hr> kan worden gepositioneerd met top/left */
+            top: 5px; /* Pas dit aan om de verticale positie te veranderen */
+            left: 1145px; /* Zorg ervoor dat de <hr> aan de linkerkant van de pagina begint */
+            text-align: right;
+            cursor: pointer;
+            font-family: Arial;
+            font-size: 73%;
+        }
+        .bookmakers-button:hover {
+            background-color: rgb(218, 218, 218);
+            border-radius: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <hr>
+    <p class="google-title">
+        <font color="blue">G</font>
+        <font color="red">o</font>
+        <font color="yellow">o</font>
+        <font color="blue">g</font>
+        <font color="green">l</font>
+        <font color="red">e</font>
+    </p>
+    <div class="search-container">
+        
+        <input type="text" class="search-bar" id="searchInput" placeholder="Zoek op Google2.0 of typ een URL">
+       
+        <button class="search-button" onclick="searchFunction()">
+            |🔍|
+        </button>
+       
+        <button class="voice-button" onclick="alert('Er was een fout opgetreden, probeer het later nog eens!')">
+            |🎙️
+        </button>
+       
+        <button class="camera-button" onclick="alert('Er was een fout opgetreden, probeer het later nog eens!')">
+            |📸|
+        </button>
+        <button class="link-toevoegen" onclick="alert('_ERROR_')">
+        <span class="link-toevoegen-+">
+            +<br>
+        </span>
+        <span class="link-toevoegen-snl">
+            Snelle link to...
+        </span>
+        </button>
+        <a class="gmail-button" aria-label="Gmail " data-pid="23" href="https://mail.google.com/mail/?tab=rm&ogbl" target="_top">Gmail</a>
+        <a class="afbeelding-button" aria-label="Gmail " data-pid="23" href="https://www.google.com/imghp?hl=nl&tab=ri&ogbl" target="_top">afbeeldingen</a>
+
+        <button class="chrome-aanpassen" onclick="alert('U heeft hier geen toegang tot Chrome aanpassen')">
+            ✏️ Chrome aanpassen
+        </button>
+
+        <button class="bookmakers-button" onclick="alert('Er is iets mis gegaan! Probeer het later nog eens.')">
+            |📁 Alle bookmakers
+        </button>
+    </div>
+    
+
+    <script>
+    function searchFunction() {
+        var query = document.getElementById('searchInput').value;  // Haalt de tekst op uit het zoekbalkje
+        if (query) {  // Controleer of er een zoekopdracht is ingevoerd
+            var url = "https://www.google.com/search?q=" + encodeURIComponent(query);  // Bouwt de URL op
+            window.location.href = url;  // Opent de URL in hetzelfde tabblad
+        } else {
+            alert('Vul alstublieft een zoekterm in.');  // Geeft een waarschuwing als het veld leeg is
+        }
+    }
+
+    </script>
+</body>
+</html>
+
+  
